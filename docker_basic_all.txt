@@ -1,0 +1,67 @@
+A simple app.js file.
+
+-----------------Dockerfile--------------------
+FROM node:alpine // alpine is linux os. we used node from linux alpine
+COPY . /app
+WORKDIR /app
+CMD node app.js
+-----------------------------------------------
+Now we will build a image for our application.
+
+docker build -t hello-world .  //tag and Dockerfile location
+
+//if we want to build a image from container we use docker commit
+
+Now from anywhere if we run = docker run hello-world
+it will run the whole as everything is in that image 
+
+
+To use it in another pc we will use = docker pull toky/hello-world 
+then we will run = docker run hello-world
+
+if we want to enter the running container we use 
+docker exec -it -u root 8c6 sh  // already running container
+But we can also start a container in interactive mode
+docker run -it ubuntu // we logged in as root user
+docker rmi  //for image remove
+
+
+
+
+pwd //path of directory
+whoami // user show
+echo $0 //show location of shell program
+history // see all commands with numbering
+!2 //2nd one will run
+
+
+
+apt update //to update database of packages
+apt-install nano
+nano file1.txt
+write something and exit .
+cat file1.txt > file2.txt 
+cat file1.txt file2.txt > combined.txt
+echo hello world > file3.txt
+
+cat file1.txt //show whole file
+less file1.txt //show 15% at first or any % then we can see more
+head -n 5 file1.txt  // show 1st 5 lines 
+tail -n 5 file1.txt // show last 5 lines
+
+ctrl+l //clear terminal window of linux 
+apt remove nano // remove installed package
+
+
+cd ~ //take to home directory which is even below root
+mkdir test
+ls
+mv test docker
+ls //will show only docker 
+cd docker 
+touch hello.txt go.txt me.txt 
+mv hello.txt hello-docker.txt //rename hello.txt 
+rm file*
+cd ~
+rm -r docker //to remove directory we use -r 
+
